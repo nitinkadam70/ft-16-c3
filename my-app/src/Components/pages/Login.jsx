@@ -12,6 +12,10 @@ export const Input = styled.input`
 padding:10px;
 display:flex;
 margin:auto;
+background:
+#9bbabd;
+color:red;
+font-size:20px;
 `;
 
 
@@ -50,7 +54,7 @@ export const Login = () => {
           type="password"
           onChange={(e) => setPassword(e.target.value)}
         />
-        <Input value = "Login" type={"submit"} data-testid="login-form-submit" />
+        <Input style={{color:"black"}} value = "Login" type={"submit"} data-testid="login-form-submit" />
       </Form>
     </>
   );
