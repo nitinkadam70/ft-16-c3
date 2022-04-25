@@ -2,9 +2,14 @@ import React, { useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
 
+
+
 const Logout = () => {
+
+  const {handleLogout} = useContext(AuthContext)
   useEffect(() => {
     // get handleLogout call back from context
+   handleLogout();
   }, []);
   return (
     <>

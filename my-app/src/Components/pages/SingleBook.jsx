@@ -1,19 +1,46 @@
-import React from "react";
+import React, { useState } from "react";
 import { useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import styled from "styled-components";
 
 // style for Flex
-const Flex = styled.div``;
+const Flex = styled.div`
+display:flex`;
 
 // add style for button
 export const Button = styled.button``;
+
+
+
 export const SingleBook = () => {
-  const data = {};
+  
+  let [data,setData] = useState()
+  
+  const {id} = useParams()
+
+  //const data = {id}
   useEffect(() => {
     // make a GET request to http://localhost:8080/books/${id}`
     // use useParams to get the id
+
+    const getData = async() => {
+
+      try{
+        let res = await fetch(`http://localhost:8080/books/${id}`);
+        let data = await res.json();
+        console.log("param",data)
+        setData(data);
+      }
+      catch(error){
+        console.log(error);
+      }
+    }
+    getData()
+    
   }, []);
+
+
+
 
   return (
     <>

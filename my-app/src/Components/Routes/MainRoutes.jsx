@@ -11,12 +11,25 @@ import { SingleBook } from "../pages/SingleBook";
 import { RequiredAuth } from "./RequiredAuth";
 
 const Mainroutes = () => {
+
   return (
     <>
       <Navbar />
       <Routes>
-       {/* keep all the routes here  */}
-       {/* /books/* route need to be protected */}
+        {/* keep all the routes here  */}
+        {/* /books/* route need to be protected */}
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/books/*" element={
+          <RequiredAuth>
+            <Books />
+          </RequiredAuth>
+        } />
+        <Route path="/books/:id" element={<SingleBook/>}/>
+
+
+        <Route path="/about" element={<About />} />
+
       </Routes>
     </>
   );

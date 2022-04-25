@@ -2,9 +2,10 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styled  from "styled-components";
 export const Flex = styled.div`
-//  add required style
+display:flex;
 `;
 export const BookCard = (props) => {
+
   const { id, title, isbn, pageCount, thumbnailUrl } = props;
   return (
     <>

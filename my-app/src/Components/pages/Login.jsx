@@ -9,11 +9,15 @@ import { Form } from "./EditBookData";
 
 // add input styling
 export const Input = styled.input`
- 
+padding:10px;
+display:flex;
+margin:auto;
 `;
 
 
 export const Login = () => {
+
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const { token, handleLogin } = useContext(AuthContext);
