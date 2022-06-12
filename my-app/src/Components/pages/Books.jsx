@@ -2,7 +2,7 @@ import React from "react";
 import { useEffect, useState } from "react";
 
 import { BookCard } from "./BookCard";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 export const Grid = styled.div`
  display:grid;
